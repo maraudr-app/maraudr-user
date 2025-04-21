@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "6dpboep8X+E=",
+  "success": true,
+  "projectFilePath": "/home/xor/RiderProjects/Maraudr.Users/Maraudr.User.Endpoints/Maraudr.User.Endpoints.csproj",
+  "expectedPackageFiles": [
+    "/home/xor/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "/home/xor/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

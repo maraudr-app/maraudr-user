@@ -1,0 +1,6 @@
+@Maraudr.User.Endpoints_HostAddress = http://localhost:5110
+
+GET {{Maraudr.User.Endpoints_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
