@@ -11,8 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="DTOs\Requests\" />
-      <Folder Include="Validation\" />
+      <PackageReference Include="AutoMapper" Version="14.0.0" />
     </ItemGroup>
 
 </Project>

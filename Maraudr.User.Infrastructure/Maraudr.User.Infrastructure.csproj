@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Maraudr.User.Application\Maraudr.User.Application.csproj" />
       <ProjectReference Include="..\Maraudr.User.Domain\Maraudr.User.Domain.csproj" />
     </ItemGroup>
 
