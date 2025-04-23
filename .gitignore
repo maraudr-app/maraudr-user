@@ -1,5 +1,19 @@
 # Common IntelliJ Platform excludes
+Maraudr.User.Application/obj
 
+Maraudr.User.Application/.idea
+
+Maraudr.User.Domain/obj
+Maraudr.User.Domain/.idea
+
+
+Maraudr.User.EndPoints/obj
+
+Maraudr.User.EndPoints/.idea
+
+Maraudr.User.Infrastructure/obj
+
+Maraudr.User.Infrastructure/.idea
 # User specific
 **/.idea/**/workspace.xml
 **/.idea/**/tasks.xml
