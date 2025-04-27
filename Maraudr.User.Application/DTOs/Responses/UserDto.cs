@@ -1,6 +1,7 @@
 using System;
+using Maraudr.Application.DTOs;
 
-namespace Maraudr.Application.DTOs;
+namespace Maraudr.User.Application.DTOs.Responses;
 
 public class UserDto
 {

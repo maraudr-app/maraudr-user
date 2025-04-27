@@ -1,31 +1,31 @@
 
 
+using Maraudr.Domain.Interfaces.Repositories;
+using Maraudr.Domain.Entities;
+
 namespace Maraudr.User.Infrastructure.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository(UserContext context) : IUserRepository
     {
-        public async Task<Domain.Entities.User> GetByIdAsync(Guid id)
+        private readonly UserContext _context = context;
+        public async Task<Domain.Entities.User?> GetByIdAsync(Guid id)
         {
-            return null;
+            return await _context.GetUserByIdAsync(id);
         }
 
-        public async Task<IEnumerable<Domain.Entities.User>> GetAllAsync()
+        public async Task<IEnumerable<Domain.Entities.User?>> GetAllAsync()
         {
-            return null;
+            return await _context.GetAllUsersAsync();
         }
 
-        public async Task<Domain.Entities.User> AddAsync(Domain.Entities.User user)
+        public async Task AddAsync(Domain.Entities.User user)
         {
-            return null;
+            await _context.AddUserAsync(user) ;
         }
-
-        public async Task<Domain.Entities.User> UpdateAsync(Domain.Entities.User user)
-        {
-            return null;
-        }
-
+        
         public async Task DeleteAsync(Domain.Entities.User user)
         {
+            await _context.DeleteUserAsync(user.Id);
         }
     }
 }

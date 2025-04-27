@@ -1,8 +1,12 @@
+
+
+
 using AutoMapper;
-using Maraudr.Application.DTOs;
+using Maraudr.Domain.Interfaces;
+using Maraudr.Domain.Interfaces.Repositories;
 using Maraudr.User.Application.DTOs.Requests;
+using Maraudr.User.Application.DTOs.Responses;
 using Maraudr.User.Application.Exceptions;
-using Maraudr.User.Infrastructure.Repositories;
 
 namespace Maraudr.User.Application.Services;
 
@@ -17,28 +21,27 @@ public class UserService : IUserService
         _mapper = mapper;
     }
 
-    public async Task<UserDto> GetUserByIdAsync(Guid id)
+    public async Task<Domain.Entities.User> GetUserByIdAsync(Guid id)
     {
-        var user = await _userRepository.GetByIdAsync(id);
-        return _mapper.Map<UserDto>(user);
+        return await _userRepository.GetByIdAsync(id);
+        
     }
 
-    public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
+    public async Task<IEnumerable<Domain.Entities.User>> GetAllUsersAsync()
     {
-        var users = await _userRepository.GetAllAsync();
-         return _mapper.Map<IEnumerable<UserDto>>(users);
+        return await _userRepository.GetAllAsync();
     }
 
 
-    public async Task<UserDto> CreateUserAsync(CreateUserDto createUserDto)
+    public async Task<Guid> CreateUserAsync(Domain.Entities.User user)
     {
-        var userEntity = _mapper.Map<Domain.Entities.User>(createUserDto); 
-        var user = await _userRepository.AddAsync(userEntity);
-       
-        return _mapper.Map<UserDto>(user);
+        await _userRepository.AddAsync(user);
+        return user.Id;
+
+
     }
 
-    public async Task<UserDto> UpdateUserAsync(Guid userId, UpdateUserDto updateUserDto)
+   /* public async Task<UserDto> UpdateUserAsync(Guid userId, UpdateUserDto updateUserDto)
     {
         var user = await _userRepository.GetByIdAsync(userId);    
         if (user == null)
@@ -48,7 +51,7 @@ public class UserService : IUserService
         _mapper.Map(updateUserDto, user);
         var updatedUser = await _userRepository.UpdateAsync(user);
         return _mapper.Map<UserDto>(updatedUser);
-    }
+    }*/
 
     public async Task DeleteUserAsync(Guid userId)
     { 

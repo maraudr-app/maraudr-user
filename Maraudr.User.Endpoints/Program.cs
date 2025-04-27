@@ -1,4 +1,6 @@
 using AutoMapper;
+using Maraudr.Domain.Interfaces;
+using Maraudr.Domain.Interfaces.Repositories;
 using Maraudr.User.Infrastructure.Repositories; // Your repository namespace
 using Maraudr.User.Application;
 using Maraudr.User.Application.Mappers;
@@ -21,6 +23,8 @@ builder.Services.AddScoped<IUserService, UserService>(); // Example service regi
 
 // Register OpenAPI / Swagger
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+//builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 

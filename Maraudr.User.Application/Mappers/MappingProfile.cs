@@ -1,5 +1,6 @@
 using Maraudr.Application.DTOs;
 using Maraudr.User.Application.DTOs.Requests;
+using Maraudr.User.Application.DTOs.Responses;
 
 namespace Maraudr.User.Application.Mappers;
 
